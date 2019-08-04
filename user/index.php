@@ -6,6 +6,50 @@ $users = mysqli_query( $enlace, $query ) or die("mal query");
 
 mysqli_close($enlace);
 
+
+
+class User{
+
+    public function __construct($name, $age)
+    {
+        $this->name = $name;
+        $this->age = $age;
+    }
+
+    public function get_name(){
+        return $this->name;
+    }
+
+    public function get_age(){
+        return $this->age;
+    }
+
+    public function is_legal(){
+        if($this->age >= 18){
+            echo "Es legal";
+        }
+        else{
+            echo "Es ilegal";
+        }
+    }
+}
+
+
+$user = new User("Victor", 12);
+
+echo $user->name .'<br>';
+echo $user->age .'<br>';
+echo $user->is_legal() .'<br>';
+
+
+$user = new User("Carlos", 21);
+
+echo $user->name .'<br>';
+echo $user->age .'<br>';
+echo $user->is_legal() .'<br>';
+
+
+
 ?>
 
 <html>
